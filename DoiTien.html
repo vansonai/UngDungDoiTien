@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <th>
+                <select id="local1">
+                    <option value="23000">VietNam</option>
+                    <option value="1">USD</option>
+                </select>
+
+            </th>
+            <th>
+                <select id="local2">
+                    <option value="1">USD</option>
+                    <option value="23000">VietNam</option>
+                </select>
+
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <th>
+                <input placeholder="Nhập số tiền" type="number" id="input"/>
+            </th>
+            <td>
+                <p id="output"></p>
+            </td>
+        </tr>
+    </table>
+    <button onclick="run()">Convert</button>
+
+
+    <script>
+            function run(){
+                let input = +document.getElementById('input').value;
+                let from = +document.getElementById('local2').value;
+                let to = +document.getElementById('local1').value;
+                let kq = input*from/to;
+                document.getElementById('output').innerHTML = kq.toFixed(3);
+            }
+    </script>
+</body>
+</html>
